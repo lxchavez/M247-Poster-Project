@@ -1,0 +1,23 @@
+body {
+  background-color: #ecf0f1;
+  font-family: 'Varela Round', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h5 {
+  color: #3498db;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.page-header {
+  border-bottom: 1px solid #bdc3c7 !important;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1400px !important;
+  }
+}
+
+#names {
+  color: #95a5a6 !important; /* #8e44ad */
+}
