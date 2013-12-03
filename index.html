@@ -9,10 +9,10 @@
   </head>
   <body>
     <div class="container">
+      
       <div class="row">
         <div class="page-header text-center">
-          <h1>Predicting Outcomes With Markov Chains</h1>
-          <h2><small id="names">Alex Chavez, Bryce Burnett, Daniel Tran, Katrina Lim, Tae Kim</small></h2>
+          <h1>Predicting Outcomes With Markov Chains <small id="names">Alex, Bryce, Daniel, Katrina, Tae</small></h1>
         </div>
       </div>
       
@@ -27,22 +27,14 @@
             nxn collection of probability vectors based on the number of states (n). The current state is used
             for the basis of the future states. The resulting Markov Chain is thus formed
             where c1=Pc0,  c2=Pc1, …  c(k+1)=Pck,where k is an integer.
-          </p>
-            
+          </p>            
           <p>
             In this presentation we will show how Markov Chains can be used to determine the results for a future
             event, and is reliable enough for many real-world processes, but may not always be the best method. 
             Two such processes we will analyze here are weather forecasting and gambling predictions.
           </p>
-          
           <img class="img-thumbnail" src="images/weather_state_diagram.png">
           
-          <h2>Objective</h2>
-          <ol>
-            <li>Understand the nature of Markov's chain.</li>
-          </ol>
-        </div>
-        <div class="col-md-4">
           <h2>Methodology</h2>
           
           <h3 class="methodology-subheading text-center">WEATHER</h3>
@@ -50,8 +42,11 @@
           <p>Stochastic Matrix for December weather in Long Beach, CA:</p>
           <p><img class="img-rounded" src="images/weather_1.png"></p>
           <p>Today's weather (Monday, December 2, 2013):</p>
-          <p><img class="img-rounded" src="images/weather_2.png"></p>
+          <p><img class="img-rounded" src="images/weather_2.png"></p>   
           
+          
+        </div>
+        <div class="col-md-4">
           <h3 class="methodology-subheading text-center">VEGAS</h3>
           <p>
             There exists a generous gambling game with probability .48 winning $1 on any turn, but .52 chance
@@ -143,16 +138,13 @@
             the difference between the weather and gambling example. Overall, the Markov chain has the potential of
             estimating the approaching result.
           </p>
-<!--
-          <h2>Sources</h2>
-          <div class="well well-sm">
-            <ul class="list-unstyled">
-              <li>Source #1</li>
-              <li>Source #2</li>
-              <li>Source #3</li>
-            </ul>
-          </div>
--->
+          
+          <h2>Acknowledgment</h2>
+          <ul class="list-unstyled">
+            <li>Source #1</li>
+            <li>Source #2</li>
+            <li>Source #3</li>
+          </ul>
           
         </div>
       </div>
