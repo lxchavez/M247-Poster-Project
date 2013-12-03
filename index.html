@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Predicting Outcomes With Markov Chains</title>
+    <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,800,600,300' rel='stylesheet' type='text/css'>
@@ -11,8 +12,8 @@
     <div class="container">
       
       <div class="row">
-        <div class="page-header text-center">
-          <h1>Predicting Outcomes With Markov Chains <small id="names">Alex, Bryce, Daniel, Katrina, Tae</small></h1>
+        <div class="page-header">
+          <h1 id="title">Predicting Outcomes With Markov Chains <small class="pull-right" id="names">Alex, Bryce, Daniel, Katrina, Tae</small></h1>
         </div>
       </div>
       
@@ -34,21 +35,38 @@
             event, and is reliable enough for many real-world processes, but may not always be the best method. 
             Two such processes we will analyze here are weather forecasting and gambling predictions.
           </p>
-          <img class="img-thumbnail" src="images/weather_state_diagram.png">
+          <p>
+            <strong>Objectives</strong>
+            <ol>
+              <li>Understand the nature of Markov’s chain and it’s stability with different situations
+</li>
+              <li>Understand how the probability evolves with the chain
+</li>
+            </ol>
+          </p>
+<!--          <img class="img-thumbnail" src="images/weather_state_diagram.png">-->
           
           <h2 class="text-center">METHODOLOGY</h2>
           
-          <h3 class="methodology-subheading text-center">WEATHER</h3>
-          <p>Suppose that tomorrow's weather does not rely on any previous day's weather except today's.</p>
-          <p>Stochastic Matrix for December 2012 weather in Long Beach, CA:</p>
+          <h3 class="methodology-subheading text-center">EXAMPLE #1 - WEATHER</h3>
+          <p>
+            Suppose that tomorrow’s weather only relies on today’s weather, and does not rely on any previous
+            days. Given the tendencies of the December weather in Long Beach, the following stochastic matrix
+            was created using data from December 2012 in the Farmer’s Almanac.
+          </p>
           <p><img class="img-rounded" src="images/weather_1.png"></p>
-          <p>Today's weather (Monday, December 2, 2013):</p>
-          <p><img class="img-rounded" src="images/weather_2.png"></p>   
-          
+          <p>Today’s weather (Monday, December 2, 2013) determined by observation:</p>
+          <p><img class="img-rounded" src="images/weather_2.png"></p>
+          <p>
+            To predict the weather of any future day, simply raise P to the desired state vector, e.g. one would
+            calculate the following to find Friday (x<sub>4</sub>):</p>
+          <p><img class="img-rounded" src="images/weather_4.png"></p>
           
         </div>
         <div class="col-md-4">
-          <h3 class="methodology-subheading text-center">VEGAS</h3>
+
+          
+          <h3 class="methodology-subheading text-center">EXAMPLE #2 - GAMBLIN'</h3>
           <p>
             There exists a generous gambling game with probability .48 winning $1 on any turn, but .52 chance
             you will lose $1. It is free to play, but you must have at least $1 up to $4. You start with $1,
@@ -63,17 +81,50 @@
             </ul>
           </p>
         
-          <p>Stochastic Matrix for the generous Las Vegas machine:</p>
+          <p>Stochastic Matrix for the generous gambling machine:</p>
           <p><img class="img-rounded" src="images/stochastic_matrix.png"></p>
-          <p>What happens if you start with a dollar?</p>
+        
+          <p><strong>What happens if you start with $1?</strong></p>
           <p><img class="img-rounded" src="images/one_dollar.png"></p>
-          <p>What happens if you start with $4?</p>
+          <p><strong>What happens if you start with $4?</strong></p>
           <p><img class="img-rounded" src="images/four_dollars.png"></p>
         
         </div>
       
         <div class="col-md-4">
           <h2 class="text-center">RESULTS</h2>
+          
+          <table class="table table-condensed">
+            <thead>
+              <th>Day</th>
+              <th>Probability Distribution</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday (x<sub>0</sub>)</td>
+                <td>
+                  <strong>Sun -</strong> 0%,<strong>Cloud/Fog -</strong> 70%, <strong>Rain -</strong> 0%</td>
+              </tr>
+              <tr>
+                <td>Tuesday (x<sub>1</sub>)</td>
+                <td><strong>Sun -</strong> 51.14%, <strong>Cloud/Fog -</strong> 22.12%, <strong>Rain -</strong> 26.74%</td>
+              </tr>
+              <tr>
+                <td>Wednesday (x<sub>2</sub>)</td>
+                <td><strong>Sun -</strong> 48.868%, <strong>Cloud/Fog -</strong> 15.465%, <strong>Rain -</strong> 35.667%</td>
+              </tr>
+              <tr>
+                <td>Thursday (x<sub>3</sub>)</td>
+                <td><strong>Sun -</strong> 47.755%, <strong>Cloud/Fog -</strong> 14.138%, <strong>Rain -</strong> 38.107%</td>
+              </tr>
+              <tr>
+                <td>Friday (x<sub>4</sub>)</td>
+                <td><strong>Sun -</strong> 47.432%, <strong>Cloud/Fog -</strong> 13.823%, <strong>Rain -</strong> 38.745%</td>
+              </tr>
+            </tbody>
+          </table>
+          
+<!--
           <table class="table table-condensed">
             <thead>
               <th></th>
@@ -90,31 +141,32 @@
             <tbody>
               <tr>
                 <td>$1</td>
-                <td>0.666</td>
-                <td>0.666</td>
+                <td>0.12345</td>
+                <td>0.12345</td>
               </tr>
               <tr>
                 <td>$2</td>
-                <td>0.666</td>
-                <td>0.666</td>
+                <td>0.12345</td>
+                <td>0.12345</td>
               </tr>
               <tr>
                 <td>$3</td>
-                <td>0.666</td>
-                <td>0.666</td>
+                <td>0.12345</td>
+                <td>0.12345</td>
               </tr>
               <tr>
                 <td>$4</td>
-                <td>0.666</td>
-                <td>0.666</td>
+                <td>0.12345</td>
+                <td>0.12345</td>
               </tr>
               <tr>
                 <td>$5</td>
-                <td>0.666</td>
-                <td>0.666</td>
+                <td>0.12345</td>
+                <td>0.12345</td>
               </tr>
             </tbody>
           </table>
+-->
           
           <h2 class="text-center">CONCLUSION</h2>
           <p>
@@ -139,27 +191,8 @@
             the difference between the weather and gambling example. Overall, the Markov chain has the potential of
             estimating the approaching result.
           </p>
-                  
-          <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title text-center">
-                  <a data-toggle="expand" data-parent="#accordion" href="#collapseOne">
-                    SOURCES
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse out">
-                <div class="panel-body">
-                  <ul>
-                    <li>Source #1</li>
-                    <li>Source #2</li>
-                    <li>Source #3</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>     
+          
+          <h2 class="text-center">SOURCES</h2> 
           
         </div>
       </div>
