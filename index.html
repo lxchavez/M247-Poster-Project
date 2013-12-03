@@ -5,19 +5,14 @@
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container">
-      
-      <div class="row">
         <div class="page-header">
           <h1 id="title">Predicting Outcomes With Markov Chains <small class="pull-right" id="names">Alex, Bryce, Daniel, Katrina, Tae</small></h1>
         </div>
-      </div>
-      
-      <div class="row">
         <div class="col-md-4">
           <h2 class="text-center">INTRODUCTION</h2>
           <p>
@@ -38,16 +33,11 @@
           <p>
             <strong>Objectives:</strong>
             <ol>
-              <li>Understand the nature of Markov’s chain and it’s stability with different situations
-</li>
-              <li>Understand how the probability evolves with the chain
-</li>
+              <li>Understand the nature of Markov’s chain and it’s stability with different situations</li>
+              <li>Understand how the probability evolves with the chain</li>
             </ol>
           </p>
-<!--          <img class="img-thumbnail" src="images/weather_state_diagram.png">-->
-          
           <h2 class="text-center">METHODOLOGY</h2>
-          
           <h3 class="methodology-subheading text-center">EXAMPLE #1 - THIS WEEK'S (POTENTIAL) FORECAST</h3>
           <p>
             Suppose that tomorrow’s weather only relies on today’s weather, and does not rely on any previous
@@ -61,11 +51,8 @@
             To predict the weather of any future day, simply raise P to the desired state vector, e.g. one would
             calculate the following to find Friday (x<sub>4</sub>):</p>
           <p><img class="img-rounded" src="images/weather_4.png"></p>
-          
-        </div>
+        </div><!-- .col -->
         <div class="col-md-4">
-
-          
           <h3 class="methodology-subheading text-center">EXAMPLE #2 - GAMBLIN' YOUR LUNCH MONEY</h3>
           <p>
             There exists a generous gambling game with probability .48 winning $1 on any turn, but .52 chance
@@ -80,22 +67,11 @@
               <li>How do your chances of winning change if you start with more money?</li>
             </ul>
           </p>
-        
           <p>Stochastic Matrix for the generous gambling machine:</p>
           <p><img class="img-rounded" src="images/stochastic_matrix.png"></p>
-        
-<!--
-          <p><strong>What happens if you start with $1?</strong></p>
-          <p><img class="img-rounded" src="images/one_dollar.png"></p>
-          <p><strong>What happens if you start with $4?</strong></p>
-          <p><img class="img-rounded" src="images/four_dollars.png"></p>
--->
-        
-        </div>
-      
+        </div><!-- .col -->
         <div class="col-md-4">
           <h2 class="text-center">RESULTS</h2>
-          
           <table class="table table-condensed">
             <thead>
               <th>Day</th>
@@ -125,7 +101,6 @@
               </tr>
             </tbody>
           </table>
-          
 <!--
           <table class="table table-condensed">
             <thead>
@@ -169,7 +144,6 @@
             </tbody>
           </table>
 -->
-          
           <h2 class="text-center">CONCLUSION</h2>
           <p>
             The Markov chain is a good application to predict the outcome of certain events, such as gambling,
@@ -183,7 +157,6 @@
             probability of 99 trials. Ultimately, it depends on the consistency of the system that allows how
             accurate the Markov chain can be.
           </p>
-          
           <h2 class="text-center">SUMMARY</h2>
           <p>
             The Markov chain is used to predict the outcome of events by using a stochastic matrix, based on previous 
@@ -193,12 +166,17 @@
             the difference between the weather and gambling example. Overall, the Markov chain has the potential of
             estimating the approaching result.
           </p>
-          
           <h2 class="text-center">SOURCES</h2> 
-          
-        </div>
-      </div>
-    </div>
+          Lay, David C., Linear Algebra and its applications, Pearson, 4th e., 2012 
+          http://www.farmersalmanac.com/weather-history/search-results/
+          http://www.bandgap.cs.rice.edu/classes/comp140/f08/Module%206/Markovchainsandprediction.pdf
+          http://www.americanscientist.org/include/popup_fullImage.aspx?key=NBukCW/BNunUamTp2cJe3afjG72GEDXaDHer5fzRR0lgqj2hg9Qtsw==
+          http://www.iasri.res.in/ebook/FET/Chap%2013_Markov%20chain_lecture_Ranjit.pdf
+          http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/Chapter11.pdf
+          http://courses.washington.edu/inde411/MarkovChains.pdf
+        </div><!-- .col -->
+    </div><!-- .container -->
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -11,6 +11,15 @@ h1, h2, h3, h4, h5, h5 {
   margin-bottom: 5px;
 }
 
+/*
+.container {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+*/
+
 .methodology-subheading {
   color: #27ae60 !important;
 }
