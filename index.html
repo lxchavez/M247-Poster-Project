@@ -18,15 +18,16 @@
       
       <div class="row">
         <div class="col-md-4">
-          <h2>INTRODUCTION</h2>
+          <h2 class="text-center">INTRODUCTION</h2>
           <p>
-            Markov Chains are one of the most widely used applications of Linear Algebra.  It consists of a
+            <em>Markov Chains</em> are one of the most widely used applications of Linear Algebra.  It consists of a
             stochastic model describing a sequence of possible events in which the probability of each event
             depends only on the state attained in the previous event. A basic understanding of a Markov Chain
             consists of a current state, often compiled into a state vector c, and a stochastic matrix P, an
             nxn collection of probability vectors based on the number of states (n). The current state is used
             for the basis of the future states. The resulting Markov Chain is thus formed
-            where c1=Pc0,  c2=Pc1, …  c(k+1)=Pck,where k is an integer.
+            where where c<sub>1</sub> = Pc<sub>0</sub>, c<sub>2</sub> = Pc<sub>1</sub>,...,
+            c<sub>(k+1)</sub> = Pc<sub>k</sub>, where k is an integer.
           </p>            
           <p>
             In this presentation we will show how Markov Chains can be used to determine the results for a future
@@ -35,11 +36,11 @@
           </p>
           <img class="img-thumbnail" src="images/weather_state_diagram.png">
           
-          <h2>METHODOLOGY</h2>
+          <h2 class="text-center">METHODOLOGY</h2>
           
           <h3 class="methodology-subheading text-center">WEATHER</h3>
           <p>Suppose that tomorrow's weather does not rely on any previous day's weather except today's.</p>
-          <p>Stochastic Matrix for December weather in Long Beach, CA:</p>
+          <p>Stochastic Matrix for December 2012 weather in Long Beach, CA:</p>
           <p><img class="img-rounded" src="images/weather_1.png"></p>
           <p>Today's weather (Monday, December 2, 2013):</p>
           <p><img class="img-rounded" src="images/weather_2.png"></p>   
@@ -72,7 +73,7 @@
         </div>
       
         <div class="col-md-4">
-          <h2>RESULTS</h2>
+          <h2 class="text-center">RESULTS</h2>
           <table class="table table-condensed">
             <thead>
               <th></th>
@@ -115,7 +116,7 @@
             </tbody>
           </table>
           
-          <h2>CONCLUSION</h2>
+          <h2 class="text-center">CONCLUSION</h2>
           <p>
             The Markov chain is a good application to predict the outcome of certain events, such as gambling,
             but not for all instances, such as weather. There are many factors that affect the weather:
@@ -129,7 +130,7 @@
             accurate the Markov chain can be.
           </p>
           
-          <h2>SUMMARY</h2>
+          <h2 class="text-center">SUMMARY</h2>
           <p>
             The Markov chain is used to predict the outcome of events by using a stochastic matrix, based on previous 
             data, and multiplying it to some initial data. Doing this one time will yield a probability vector that
@@ -142,9 +143,9 @@
           <div class="panel-group" id="accordion">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h4 class="panel-title">
+                <h4 class="panel-title text-center">
                   <a data-toggle="expand" data-parent="#accordion" href="#collapseOne">
-                    ACKNOWLEDGEMENT
+                    SOURCES
                   </a>
                 </h4>
               </div>
