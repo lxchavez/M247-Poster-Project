@@ -4,7 +4,7 @@
     <title>Markov Chains</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,800,600,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -20,76 +20,130 @@
         <div class="col-md-4">
           <h2>Introduction</h2>
           <p>
-          Markov Chains are one of the most widely used applications of Linear Algebra.  It consists of a stochastic model describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event. A basic understanding of a Markov Chain consists of a current state, often compiled into a state vector c, and a stochastic matrix P, an nxn collection of probability vectors based on the number of states (n). The current state is used for the basis of the future states. The resulting Markov Chain is thus formed where c1=Pc0,  c2=Pc1, …  c(k+1)=Pck,where k is an integer.
+            Markov Chains are one of the most widely used applications of Linear Algebra.  It consists of a
+            stochastic model describing a sequence of possible events in which the probability of each event
+            depends only on the state attained in the previous event. A basic understanding of a Markov Chain
+            consists of a current state, often compiled into a state vector c, and a stochastic matrix P, an
+            nxn collection of probability vectors based on the number of states (n). The current state is used
+            for the basis of the future states. The resulting Markov Chain is thus formed
+            where c1=Pc0,  c2=Pc1, …  c(k+1)=Pck,where k is an integer.
           </p>
             
           <p>
-            In this presentation we will show how Markov Chains can be used to determine the results for a future event, and is reliable enough for many real-world processes, but may not always be the best method. 
-Two such processes we will analyze here are weather forecasting and gambling predictions.
+            In this presentation we will show how Markov Chains can be used to determine the results for a future
+            event, and is reliable enough for many real-world processes, but may not always be the best method. 
+            Two such processes we will analyze here are weather forecasting and gambling predictions.
           </p>
+          
+          <img class="img-thumbnail" src="images/weather_state_diagram.png">
+          
           <h2>Objective</h2>
+          <ol>
+            <li>Understand the nature of Markov's chain.</li>
+          </ol>
         </div>
         <div class="col-md-4">
           <h2>Methodology</h2>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Construct a matrix P</h3>
-            </div>
-            <div class="panel-body">
-              Stuff Goes Here
-            </div>
-          </div>
           
+          <h3 class="methodology-subheading text-center">WEATHER</h3>
+          <p>Suppose that tomorrow's weather does not rely on any previous day's weather except today's.</p>
+          <p>Stochastic Matrix for December weather in Long Beach, CA:</p>
+          <p><img class="img-rounded" src="images/weather_1.png"></p>
+          <p>Today's weather (Monday, December 2, 2013):</p>
+          <p><img class="img-rounded" src="images/weather_2.png"></p>
+          
+          <h3 class="methodology-subheading text-center">VEGAS</h3>
+          <p>
+            There exists a generous gambling game with probability .48 winning $1 on any turn, but .52 chance
+            you will lose $1. It is free to play, but you must have at least $1 up to $4. You start with $1,
+            and the game stops when you are either broke (lose) or have $5 (win).
+          </p>
+          <p>
+            <strong>Important questions to answer:</strong>
+            <ul>
+              <li>Should you play?</li>
+              <li>What is the probability you win $5 or go broke?</li>
+              <li>How do your chances of winning change if you start with more money?</li>
+            </ul>
+          </p>
+        
+          <p>Stochastic Matrix for the generous Las Vegas machine:</p>
+          <p><img class="img-rounded" src="images/stochastic_matrix.png"></p>
+          <p>What happens if you start with a dollar?</p>
+          <p><img class="img-rounded" src="images/one_dollar.png"></p>
+          <p>What happens if you start with $4?</p>
+          <p><img class="img-rounded" src="images/four_dollars.png"></p>
+        
+        </div>
+      
+        <div class="col-md-4">
           <h2>Results</h2>
           <table class="table table-condensed">
             <thead>
-              <th>Amt Put In</th>
-              <th>$0</th>
-              <th>$5</th>
+              <th></th>
+              <th>Probability of Winning</th>
+              <th>
+                <tr></tr>
+                <tr>
+                  <td><strong>Amount Gambled</strong></td>
+                  <td>$0</td>
+                  <td>$5</td>
+                </tr>
+              </th>
             </thead>
             <tbody>
               <tr>
                 <td>$1</td>
-                <td>0.999</td>
+                <td>0.666</td>
+                <td>0.666</td>
               </tr>
               <tr>
                 <td>$2</td>
-                <td>0.999</td>
+                <td>0.666</td>
+                <td>0.666</td>
               </tr>
               <tr>
                 <td>$3</td>
-                <td>0.999</td>
+                <td>0.666</td>
+                <td>0.666</td>
               </tr>
               <tr>
                 <td>$4</td>
-                <td>0.99</td>
+                <td>0.666</td>
+                <td>0.666</td>
               </tr>
               <tr>
                 <td>$5</td>
-                <td>0.00</td>
+                <td>0.666</td>
+                <td>0.666</td>
               </tr>
             </tbody>
           </table>
           
-<!--          <img class="img-thumbnail" src="images/state_diagram.png" style="width: 240px; height: 240px;">-->
-          
-        </div>
-        <div class="col-md-4">
           <h2>Conclusion</h2>
           <p>
-          The Markov chain is a good application to predict the outcome of certain events, such as gambling,
-          but not for all instances, such as weather. There are many factors that affect the weather:
-          climate change, humidity, etc. It is difficult to determine the percentages of sunny, foggy, and
-          rain on a current day, specifically finding initial probability vector. Additionally, as the chain
-          for the weather is continued, it converges to a consistent probability which is not how weather behaves.
-          However, gambling is a more contained system that is based on the stochastic matrix of the machine.
-          The results show that the bid is higher, the probability to win is higher and vise-versa. Everything 
-          is predetermined by which machine is used and the amount of money by the user matching the consistent
-          probability of 99 trials. Ultimately, it depends on the consistency of the system that allows how
-          accurate the Markov chain can be.
+            The Markov chain is a good application to predict the outcome of certain events, such as gambling,
+            but not for all instances, such as weather. There are many factors that affect the weather:
+            climate change, humidity, etc. It is difficult to determine the percentages of sunny, foggy, and
+            rain on a current day, specifically finding initial probability vector. Additionally, as the chain
+            for the weather is continued, it converges to a consistent probability which is not how weather behaves.
+            However, gambling is a more contained system that is based on the stochastic matrix of the machine.
+            The results show that the bid is higher, the probability to win is higher and vise-versa. Everything 
+            is predetermined by which machine is used and the amount of money by the user matching the consistent
+            probability of 99 trials. Ultimately, it depends on the consistency of the system that allows how
+            accurate the Markov chain can be.
           </p>
           
           <h2>Summary</h2>
+          <p>
+            The Markov chain is used to predict the outcome of events by using a stochastic matrix, based on previous 
+            data, and multiplying it to some initial data. Doing this one time will yield a probability vector that
+            can be used to predict the next outcome. However, doing this multiple times will yield a probability 
+            vector that can predict even further, that is only accurate depending on the given system. This explains
+            the difference between the weather and gambling example. Overall, the Markov chain has the potential of
+            estimating the approaching result.
+          </p>
+<!--
           <h2>Sources</h2>
           <div class="well well-sm">
             <ul class="list-unstyled">
@@ -98,6 +152,8 @@ Two such processes we will analyze here are weather forecasting and gambling pre
               <li>Source #3</li>
             </ul>
           </div>
+-->
+          
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 body {
   background-color: #ecf0f1;
-/*  font-size: 12px;*/
-  font-family: 'Varela Round', sans-serif;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h5 {
@@ -9,7 +9,26 @@ h1, h2, h3, h4, h5, h5 {
   font-family: 'Varela Round', sans-serif;
 }
 
+h1, h2, h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+h2 .h2 {
+  font-size: 28px;
+}
+
+h3 .h3 {
+  font-size: 26px;
+}
+
+.methodology-subheading {
+  color: #27ae60 !important;
+}
+
 .page-header {
+  padding-bottom: 0 !important;
+  margin: 0 !important; /* -10px */
   border-bottom: 1px solid #bdc3c7 !important;
 }
 
