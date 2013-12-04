@@ -4,21 +4,45 @@ body {
 }
 
 h1, h2, h3, h4, h5, h5 {
-  color: #3498db;
+  color: #fff;
   font-family: 'Varela Round', sans-serif;
   font-size: 18px !important;
   margin-top: 10px;
   margin-bottom: 5px;
 }
 
-/*
+.colored-heading {
+    background: #3498db;
+    color: #fff !important;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-bottom: 1px;
+    margin: 10px 20px;
+}
+
+.colored-subheading {
+    background: #2ecc71;
+    color: #fff !important;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-bottom: 1px;
+    margin: 10px 20px;
+}
+
+.h2 .colored-heading {
+  color: #fff !important;
+}
+
+.h3 .colored-heading {
+  color: #fff !important;
+}
+
 .container {
   padding-right: 0;
   padding-left: 0;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 10px;
 }
-*/
 
 .methodology-subheading {
   color: #27ae60 !important;
@@ -28,6 +52,13 @@ h1, h2, h3, h4, h5, h5 {
   padding-bottom: 0 !important;
   margin: 0 !important; /* -10px */
   border-bottom: 1px solid #bdc3c7 !important;
+}
+
+.rounded-corners {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -khtml-border-radius: 15px;
 }
 
 @font-face {
@@ -46,6 +77,6 @@ h1, h2, h3, h4, h5, h5 {
 }
 
 #title {
-  padding-top: 20px;
+  color: #3498db !important;
   font-size: 28px !important;
 }

@@ -13,23 +13,24 @@
           <h1 id="title">Predicting Outcomes With Markov Chains <small class="pull-right" id="names">Alex, Bryce, Daniel, Katrina, Tae</small></h1>
         </div>
         <div class="col-md-4">
-          <h2 class="text-center">INTRODUCTION</h2>
-          <p>
-            <em>Markov Chains</em> are one of the most widely used applications of Linear Algebra.  It consists of a
-            stochastic model describing a sequence of possible events in which the probability of each event
-            depends only on the state attained in the previous event. A basic understanding of a Markov Chain
-            consists of a current state, often compiled into a state vector c, and a stochastic matrix P, an
-            nxn collection of probability vectors based on the number of states (n). The current state is used
-            for the basis of the future states. The resulting Markov Chain is thus formed
-            where where c<sub>1</sub> = Pc<sub>0</sub>, c<sub>2</sub> = Pc<sub>1</sub>,...,
-            c<sub>(k+1)</sub> = Pc<sub>k</sub>, where k is an integer.
-          </p>
-          <p>
-            In this presentation we will show how Markov
-            Chains can be used to determine the results for a future event, and is reliable enough for many real-world
-            processes, but may not always be the best method. Two such processes we will analyze here are weather
-            forecasting and gambling predictions.
-          </p>
+          <div class="colored-heading rounded-corners">
+            <h2 class="text-center">INTRODUCTION</h2>
+          </div>
+          <ul>
+            <li>Most widely used applications of Linear Algebra</li>
+            <li>Describes a sequence of possible events in which the probability of each event depends only on the state attained in the previous event</li>
+            <li>A basic Markov Chain consists of:</li>
+            <ul>
+              <li>a current state c0 , or initial state. Used for the basis of future states</li>
+              <li>a stochastic matrix P, an nxn collection of probability vectors based on the number of states (n)</li>
+            </ul>
+            <li>Probability vector is one that is made up of nonnegative entries that add up to 1</li>
+            <li>Resulting Markov Chain is thus formed where c<sub>1</sub> = Pc<sub>0</sub>, c<sub>2</sub> = Pc<sub>1</sub>,...,c<sub>(k+1)</sub> = Pc<sub>k</sub>, where k is an integer</li>
+            <li>Can be used to determine results for a future event</li>
+            <ul>
+              <li>Reliable, but not always the best method</li>
+            </ul>
+          </ul>
           <p>
             <strong>Objectives:</strong>
             <ol>
@@ -37,20 +38,22 @@
               <li>Understand how the probability evolves with the chain</li>
             </ol>
           </p>
-          <h2 class="text-center">METHODOLOGY</h2>
+          <div class="colored-heading rounded-corners">
+            <h2 class="text-center">METHODOLOGY</h2>
+          </div>
           <h3 class="methodology-subheading text-center">EXAMPLE #1 - THIS WEEK'S FORECAST</h3>
           <p>
             Suppose that tomorrow’s weather only relies on today’s weather, and does not rely on any previous
             days. Given the tendencies of the December weather in Long Beach, the following stochastic matrix
             was created using data from December 2012 in the Farmer’s Almanac.
           </p>
-          <p><img class="img-rounded" src="images/weather_1.png"></p>
+          <p><img class="img-rounded img-responsive" src="images/weather_1.png"></p>
           <p>Today’s weather (Monday, December 2, 2013) determined by observation:</p>
-          <p><img class="img-rounded" src="images/weather_2.png"></p>
+          <p><img class="img-rounded img-responsive" src="images/weather_2.png"></p>
           <p>
             To predict the weather of any future day, simply raise P to the desired state vector, e.g. one would
             calculate the following to find Friday (x<sub>4</sub>):</p>
-          <p><img class="img-rounded" src="images/weather_4.png"></p>
+          <p><img class="img-rounded img-responsive" src="images/weather_4.png"></p>
         </div><!-- .col -->
         <div class="col-md-4">
           <h3 class="methodology-subheading text-center">EXAMPLE #2 - GAMBLIN' YOUR LUNCH MONEY</h3>
@@ -68,89 +71,31 @@
             </ul>
           </p>
           <p>Stochastic Matrix for the generous gambling machine:</p>
-          <p><img class="img-rounded" src="images/stochastic_matrix.png"></p>
+          <p><img class="img-rounded img-responsive" src="images/stochastic_matrix.png"></p>
           <p><strong>What happens when you start with $1?</strong></p>
           <p>A $1 bet is represented as x<sub>0</sub> = [0 1 0 0 0 0]<sup>T</sup>.</p>
-          <p><img class="img-rounded" src="images/one_dollar.png"></p>
+          <p><img class="img-rounded img-responsive" src="images/one_dollar.png"></p>
           <p><strong>What happens when you start with $4?</strong></p>
           <p>A $4 bet is represented as x<sub>0</sub> = [0 0 0 0 1 0]<sup>T</sup>.</p>
-          <p><img class="img-rounded" src="images/four_dollars.png"></p>
+          <p><img class="img-rounded img-responsive" src="images/four_dollars.png"></p>
         </div><!-- .col -->
         <div class="col-md-4">
-          <h2 class="text-center">RESULTS</h2>
-          <table class="table table-condensed">
-            <thead>
-              <th>Day</th>
-              <th>Probability Distribution</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Monday (x<sub>0</sub>)</td>
-                <td>
-                  <strong>Sun -</strong> 70%, <strong>Cloud/Fog -</strong> 70%, <strong>Rain -</strong> 0%</td>
-              </tr>
-              <tr>
-                <td>Tuesday (x<sub>1</sub>)</td>
-                <td><strong>Sun -</strong> 51.14%, <strong>Cloud/Fog -</strong> 22.12%, <strong>Rain -</strong> 26.74%</td>
-              </tr>
-              <tr>
-                <td>Wednesday (x<sub>2</sub>)</td>
-                <td><strong>Sun -</strong> 48.868%, <strong>Cloud/Fog -</strong> 15.465%, <strong>Rain -</strong> 35.667%</td>
-              </tr>
-              <tr>
-                <td>Thursday (x<sub>3</sub>)</td>
-                <td><strong>Sun -</strong> 47.755%, <strong>Cloud/Fog -</strong> 14.138%, <strong>Rain -</strong> 38.107%</td>
-              </tr>
-              <tr>
-                <td>Friday (x<sub>4</sub>)</td>
-                <td><strong>Sun -</strong> 47.432%, <strong>Cloud/Fog -</strong> 13.823%, <strong>Rain -</strong> 38.745%</td>
-              </tr>
-            </tbody>
-          </table>
-<!--
-          <table class="table table-condensed">
-            <thead>
-              <th></th>
-              <th>Probability of Winning</th>
-              <th>
-                <tr></tr>
-                <tr>
-                  <td><strong>Amount Gambled</strong></td>
-                  <td>$0</td>
-                  <td>$5</td>
-                </tr>
-              </th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>$1</td>
-                <td>0.12345</td>
-                <td>0.12345</td>
-              </tr>
-              <tr>
-                <td>$2</td>
-                <td>0.12345</td>
-                <td>0.12345</td>
-              </tr>
-              <tr>
-                <td>$3</td>
-                <td>0.12345</td>
-                <td>0.12345</td>
-              </tr>
-              <tr>
-                <td>$4</td>
-                <td>0.12345</td>
-                <td>0.12345</td>
-              </tr>
-              <tr>
-                <td>$5</td>
-                <td>0.12345</td>
-                <td>0.12345</td>
-              </tr>
-            </tbody>
-          </table>
--->
-          <h2 class="text-center">CONCLUSION</h2>
+          <div class="colored-heading rounded-corners">
+            <h2 class="text-center">RESULTS & OBSERVATIONS</h2>
+          </div>
+          <ul>
+            <li>We found out that using December 2012 weather data to predict the 5-day forecast of a week in December 2013 was not accurate</li>
+            <ul>
+              <li>We discovered that trying to predict weather based on past events or states was, at best, flawed conjecture</li>
+              <li>The weather in December 2013 might not necessarily be the same type of weather as it was in December 2012</li>
+            </ul>
+            <li>One should only play the "genorous" gambling game if the bids are high</li>
+          </ul>
+          <p><img class="img-rounded img-responsive" src="images/gambling_state_diagram.png"></p>
+          <p><strong>Altough the odds of winning seem appealing, it is not worth it unless "you go big, or go home".</strong></p>
+          <div class="colored-heading rounded-corners">
+            <h2 class="text-center">CONCLUSION</h2>
+          </div>
           <p>
             <ul>
               <li>Markov Chain good for predicting in events like gambling, but not weather</li>
@@ -167,16 +112,17 @@
               <li>Ultimately, the accuracy of the Markov Chain depends on the consistency of the system</li>
             </ul>
           </p>
-          <h2 class="text-center">SUMMARY</h2>
-          <p>
-            The Markov chain is used to predict the outcome of events by using a stochastic matrix, based on previous 
-            data, and multiplying it to some initial data. Doing this one time will yield a probability vector that
-            can be used to predict the next outcome. However, doing this multiple times will yield a probability 
-            vector that can predict even further, that is only accurate depending on the given system. This explains
-            the difference between the weather and gambling example. Overall, the Markov chain has the potential of
-            estimating the approaching result.
-          </p>
-          <h2 class="text-center">SOURCES</h2>
+          <div class="colored-heading rounded-corners">
+            <h2 class="text-center">SUMMARY</h2>
+          </div>
+          <ul>
+            <li>Stochastic matrix is a square matrix whose columns are probability vectors based on previous data</li>
+            <li>The Markov chain is a probability vector and used to predict possible outcomes, such that X<sub>(k+1)</sub> = PX<sub>k</sub> for k = 0,1,2,...</li>
+            <li>Overall, the Markov chain has the potential of estimating the approaching result in the field of business, chemistry, engineering, physics, and elsewhere</li>
+          </ul>
+          <div class="colored-heading rounded-corners">
+            <h2 class="text-center">SOURCES</h2>
+          </div>
           <ul class="list-unstyled">
             <li>Lay, David C., Linear Algebra and its applications, Pearson, 4th e., 2012 </li>
             <li>
